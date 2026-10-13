@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VelocityType | Modern Typing Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-900 to-purple-900 font-poppins text-gray-100 flex flex-col items-center justify-center p-4">
+    <div class="w-full max-w-4xl bg-white/5 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:shadow-purple-500/20">
+        <div class="p-6 md:p-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">VelocityType</h1>
+            <p class="text-center text-gray-300 mb-8">Test your typing speed in style</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10 transition-all hover:bg-white/10">
+                    <div class="text-gray-400 text-sm">WPM</div>
+                    <div class="text-2xl font-bold" id="wpm">0</div>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10 transition-all hover:bg-white/10">
+                    <div class="text-gray-400 text-sm">Accuracy</div>
+                    <div class="text-2xl font-bold" id="accuracy">100%</div>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10 transition-all hover:bg-white/10">
+                    <div class="text-gray-400 text-sm">Time</div>
+                    <div class="text-2xl font-bold" id="time">60s</div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <div id="timer-bar" class="h-1.5 w-full bg-purple-900/50 rounded-full overflow-hidden mb-2">
+                    <div id="timer-progress" class="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-300" style="width: 100%"></div>
+                </div>
+                <div class="flex justify-between text-sm text-gray-400">
+                    <span>Test in progress</span>
+                    <span id="timer-text">1:00</span>
+                </div>
+            </div>
+
+            <div id="text-display" class="bg-white/5 rounded-xl p-6 mb-6 border border-white/10 text-lg leading-relaxed tracking-wide"></div>
+
+            <div class="relative">
+                <textarea id="user-input" class="w-full bg-white/10 border border-white/20 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent placeholder-gray-500 resize-none" rows="4" placeholder="Start typing here when the test begins..." disabled></textarea>
+                <button id="start-btn" class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full font-medium shadow-lg hover:shadow-purple-500/30 transition-all hover:scale-105 focus:outline-none">
+                    Start Test
+                </button>
+                <button id="reset-btn" class="hidden absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-2 rounded-full font-medium shadow-lg hover:shadow-gray-500/30 transition-all hover:scale-105 focus:outline-none">
+                    Try Again
+                </button>
+            </div>
+        </div>
+
+        <div id="results" class="hidden bg-gradient-to-r from-purple-900/50 to-pink-900/50 p-6 md:p-8 border-t border-white/10">
+            <h2 class="text-2xl font-bold mb-4 text-center">Your Results</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                    <div class="text-gray-400 text-sm">Words/Min</div>
+                    <div class="text-3xl font-bold" id="result-wpm">0</div>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                    <div class="text-gray-400 text-sm">Accuracy</div>
+                    <div class="text-3xl font-bold" id="result-accuracy">100%</div>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                    <div class="text-gray-400 text-sm">Characters</div>
+                    <div class="text-3xl font-bold"><span id="result-correct">0</span>/<span id="result-total">0</span></div>
+                </div>
+                <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+                    <div class="text-gray-400 text-sm">Time</div>
+                    <div class="text-3xl font-bold" id="result-time">60s</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

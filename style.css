@@ -1,0 +1,54 @@
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+#text-display span {
+    position: relative;
+}
+
+#text-display span.correct {
+    color: #a78bfa;
+}
+
+#text-display span.incorrect {
+    color: #f87171;
+    text-decoration: underline;
+}
+
+#text-display span.current {
+    background-color: rgba(217, 70, 239, 0.2);
+    border-radius: 2px;
+}
+
+#text-display span.current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #d946ef;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
